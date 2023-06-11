@@ -17,7 +17,7 @@ RSpec.describe HourlyWeather do
         expect(first_hour_weather).to be_an(HourlyWeather)
         expect(first_hour_weather.time).to eq('00:00')
         expect(first_hour_weather.temperature).to eq(55.9)
-        expect(first_hour_weather.condition).to eq('Patchy rain possible')
+        expect(first_hour_weather.conditions).to eq('Patchy rain possible')
         expect(first_hour_weather.icon).to eq('cdn.weatherapi.com/weather/64x64/night/176.png')
       end
     end

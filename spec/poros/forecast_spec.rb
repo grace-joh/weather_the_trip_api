@@ -11,9 +11,9 @@ RSpec.describe Forecast do
 
         expect(forecast).to be_a(Forecast)
         expect(forecast.current_weather).to be_a(CurrentWeather)
-        expect(forecast.five_day_weather).to be_an(Array)
-        expect(forecast.five_day_weather.count).to eq(3)
-        expect(forecast.five_day_weather).to all(be_a(DailyWeather))
+        expect(forecast.daily_weather).to be_an(Array)
+        expect(forecast.daily_weather.count).to eq(3)
+        expect(forecast.daily_weather).to all(be_a(DailyWeather))
         expect(forecast.hourly_weather).to be_an(Array)
         expect(forecast.hourly_weather.count).to eq(3)
         expect(forecast.hourly_weather).to all(be_an(HourlyWeather))

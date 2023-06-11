@@ -18,9 +18,9 @@ RSpec.describe ForecastFacade do
         expect(denver_forecast).to be_a(Forecast)
 
         expect(denver_forecast.current_weather).to be_a(CurrentWeather)
-        expect(denver_forecast.five_day_weather).to be_an(Array)
-        expect(denver_forecast.five_day_weather.count).to eq(5)
-        expect(denver_forecast.five_day_weather).to all(be_a(DailyWeather))
+        expect(denver_forecast.daily_weather).to be_an(Array)
+        expect(denver_forecast.daily_weather.count).to eq(5)
+        expect(denver_forecast.daily_weather).to all(be_a(DailyWeather))
         expect(denver_forecast.hourly_weather).to be_an(Array)
         expect(denver_forecast.hourly_weather.count).to eq(24)
         expect(denver_forecast.hourly_weather).to all(be_an(HourlyWeather))
