@@ -20,14 +20,12 @@ RSpec.describe 'Forecast API' do
         expect(@denver_weather[:data][:id]).to eq(nil)
         expect(@denver_weather[:data]).to have_key :type
         expect(@denver_weather[:data][:type]).to eq('forecast')
-        expect(@denver_weather[:data]).to have_key :attributes
 
+        expect(@denver_weather[:data]).to have_key :attributes
         attributes = @denver_weather[:data][:attributes]
         expect(attributes).to be_a Hash
-        expect(attributes).to have_key :current_weather
-        expect(attributes).to have_key :five_day_weather
-        expect(attributes).to have_key :hourly_weather
 
+        expect(attributes).to have_key :current_weather
         current = attributes[:current_weather]
         expect(current).to be_a Hash
         expect(current).to have_key :last_updated
@@ -47,11 +45,11 @@ RSpec.describe 'Forecast API' do
         expect(current).to have_key :icon
         expect(current[:icon]).to be_a String
 
-        five_day = attributes[:five_day_weather]
-        expect(five_day).to be_an Array
-        expect(five_day.count).to eq(5)
-
-        five_day.each do |day|
+        expect(attributes).to have_key :daily_weather
+        daily = attributes[:daily_weather]
+        expect(daily).to be_an Array
+        expect(daily.count).to eq(5)
+        daily.each do |day|
           expect(day).to be_a Hash
           expect(day).to have_key :date
           expect(day[:date]).to be_a String
@@ -69,18 +67,18 @@ RSpec.describe 'Forecast API' do
           expect(day[:icon]).to be_a String
         end
 
+        expect(attributes).to have_key :hourly_weather
         hourly = attributes[:hourly_weather]
         expect(hourly).to be_an Array
         expect(hourly.count).to eq(24)
-
         hourly.each do |hour|
           expect(hour).to be_a Hash
           expect(hour).to have_key :time
           expect(hour[:time]).to be_a String
           expect(hour).to have_key :temperature
           expect(hour[:temperature]).to be_a Float
-          expect(hour).to have_key :condition
-          expect(hour[:condition]).to be_a String
+          expect(hour).to have_key :conditions
+          expect(hour[:conditions]).to be_a String
           expect(hour).to have_key :icon
           expect(hour[:icon]).to be_a String
         end
@@ -116,7 +114,7 @@ RSpec.describe 'Forecast API' do
         expect(current).to_not have_key :gust_mph
         expect(current).to_not have_key :gust_kph
         expect(current).to_not have_key :air_quality
-        first_day = attributes[:five_day_weather][0]
+        first_day = attributes[:daily_weather][0]
         expect(first_day).to_not have_key :date_epoch
         expect(first_day).to_not have_key :maxtemp_c
         expect(first_day).to_not have_key :mintemp_c
