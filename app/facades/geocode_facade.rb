@@ -1,17 +1,17 @@
 class GeocodeFacade
-  def get_coordinates(city_state)
-    format_data(coordinate_data(city_state))
+  def get_coordinates(location)
+    format_data(coordinates(location))
   end
 
   private
 
+  # returns coordinates in format: "lat,lon"
   def format_data(data)
-    { lat: data[:results][0][:locations][0][:displayLatLng][:lat],
-      lon: data[:results][0][:locations][0][:displayLatLng][:lng] }
+    "#{data[:results][0][:locations][0][:displayLatLng][:lat]},#{data[:results][0][:locations][0][:displayLatLng][:lng]}"
   end
 
-  def coordinate_data(city_state)
-    @_coordinate_data ||= service.get_coordinates(city_state)
+  def coordinates(location)
+    @_coordinate_data ||= service.get_coordinates(location)
   end
 
   def service

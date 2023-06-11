@@ -4,10 +4,9 @@ RSpec.describe WeatherService, :vcr do
   describe 'instance methods' do
     describe '#get_forecast' do
       before(:each) do
-        lat = 39.74001
-        lon = 104.99202
+        lat_lon = "39.74001,-104.99202"
         @service = WeatherService.new
-        @forecast = @service.get_forecast(lat, lon)
+        @forecast = @service.get_forecast(lat_lon)
       end
 
       it 'returns the current weather for a location' do

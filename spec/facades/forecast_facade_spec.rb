@@ -2,20 +2,19 @@ require 'rails_helper'
 
 RSpec.describe ForecastFacade do
   describe 'instance methods' do
+    before(:each) do
+      location = 'denver,co'
+      @facade = ForecastFacade.new(location)
+    end
     describe '#initialize' do
       it 'exists' do
-        city = 'denver'
-        state = 'co'
-
-        expect(ForecastFacade.new(city, state)).to be_a(ForecastFacade)
+        expect(@facade).to be_a(ForecastFacade)
       end
     end
 
     describe '#get_forecast', :vcr do
       it 'returns a forecast object' do
-        facade = ForecastFacade.new('denver', 'co')
-
-        denver_forecast = facade.get_forecast
+        denver_forecast = @facade.get_forecast
         expect(denver_forecast).to be_a(Forecast)
 
         expect(denver_forecast.current_weather).to be_a(CurrentWeather)

@@ -1,6 +1,6 @@
 class ForecastFacade
-  def initialize(city, state)
-    @city_state = "#{city},#{state}"
+  def initialize(location)
+    @location = location
   end
 
   def get_forecast
@@ -29,17 +29,15 @@ class ForecastFacade
   end
 
   def forecast_data
-    lat, lon = coordinates
-    weather_service.get_forecast(lat, lon)
-  end
-
-  def coordinates
-    @_coordinates ||= geocode_facade.get_coordinates(@city_state)
-    return @_coordinates[:lat], @_coordinates[:lon]
+    @_forecast_data ||= weather_service.get_forecast(coordinates)
   end
 
   def weather_service
     @_weather_service ||= WeatherService.new
+  end
+
+  def coordinates
+    @_coordinates ||= geocode_facade.get_coordinates(@location)
   end
 
   def geocode_facade
