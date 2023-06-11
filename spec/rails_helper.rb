@@ -81,3 +81,43 @@ VCR.configure do |config|
   config.filter_sensitive_data('MAPQUEST_API_KEY') { ENV['MAPQUEST_API_KEY'] }
   config.configure_rspec_metadata!
 end
+
+def forecast_test_data
+  @current_weather = CurrentWeather.new({
+                                          "last_updated": '2023-06-11 07:00',
+                                          "temp_f": 48.4,
+                                          "condition": {
+                                            "text": 'Partly cloudy',
+                                            "icon": '//cdn.weatherapi.com/weather/64x64/day/116.png'
+                                          },
+                                          "humidity": 90,
+                                          "feelslike_f": 47.3,
+                                          "vis_miles": 9.0,
+                                          "uv": 3.0
+                                        })
+  @daily_weather = DailyWeather.new({
+                                      "date": '2023-06-11',
+                                      "day": {
+                                        "maxtemp_f": 68.4,
+                                        "mintemp_f": 53.6,
+                                        "totalsnow_cm": 0.0,
+                                        "condition": {
+                                          "text": 'Heavy rain',
+                                          "icon": '//cdn.weatherapi.com/weather/64x64/day/308.png'
+                                        }
+                                      },
+                                      "astro": {
+                                        "sunrise": '05:32 AM',
+                                        "sunset": '08:28 PM'
+                                      },
+                                      "hour": []
+                                    })
+  @hourly_weather = HourlyWeather.new({
+                                        "time": '2023-06-11 00:00',
+                                        "temp_f": 55.9,
+                                        "condition": {
+                                          "text": 'Patchy rain possible',
+                                          "icon": '//cdn.weatherapi.com/weather/64x64/night/176.png'
+                                        }
+                                      })
+end
