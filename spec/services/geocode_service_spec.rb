@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe GeocodeService do
+RSpec.describe GeocodeService, :vcr do
   describe 'instance methods' do
     before :each do
       @service = GeocodeService.new
