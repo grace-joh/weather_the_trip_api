@@ -1,6 +1,8 @@
 class LibraryService
   def search_library(location)
     get_url("/search.json?q=#{location}")
+    # get_url("/search.json?place=#{location}}")
+    # get_url("/search.json?q=#{location}&subject=travel")
   end
 
   private
