@@ -11,11 +11,11 @@ class BooksFacade
   private
 
   def total_books_found
-    service.search_library(@location)[:numFound]
+    book_search[:numFound]
   end
 
   def list_of_books_by_quantity
-    book_from_library = service.search_library(@destination)[:docs][0..@quantity_index]
+    book_from_library = book_search[:docs][0..@quantity_index]
     book_from_library.map do |book|
       Book.new(book)
     end
@@ -34,6 +34,10 @@ class BooksFacade
 
   def forecast_data
     @_forecast ||= ForecastFacade.new(@destination).get_forecast
+  end
+
+  def book_search
+    @_book_search ||= service.search_library(@destination)
   end
 
   def service
