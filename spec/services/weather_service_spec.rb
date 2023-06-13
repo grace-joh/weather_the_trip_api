@@ -81,5 +81,33 @@ RSpec.describe WeatherService, :vcr do
         expect(first_hour[:condition][:icon]).to be_a(String)
       end
     end
+
+    describe '#get_destination_weather' do
+      it 'returns the forecast for a location at a given date and time' do
+        lat_lon = "41.88425,-87.63245"
+        date = DateTime.now.strftime('%Y-%m-%d')
+        hour = Time.now.hour
+        weather_data = WeatherService.new.get_destination_weather(lat_lon, date, hour)
+
+        expect(weather_data).to be_a(Hash)
+        expect(weather_data).to have_key :forecast
+        expect(weather_data[:forecast]).to be_a(Hash)
+        expect(weather_data[:forecast]).to have_key :forecastday
+        expect(weather_data[:forecast][:forecastday]).to be_an(Array)
+        expect(weather_data[:forecast][:forecastday].count).to eq(1)
+        expect(weather_data[:forecast][:forecastday][0]).to have_key :hour
+        expect(weather_data[:forecast][:forecastday][0][:hour]).to be_an(Array)
+        expect(weather_data[:forecast][:forecastday][0][:hour].count).to eq(1)
+        expect(weather_data[:forecast][:forecastday][0][:hour][0]).to have_key :time
+        expect(weather_data[:forecast][:forecastday][0][:hour][0][:time]).to be_a(String)
+        expect(weather_data[:forecast][:forecastday][0][:hour][0][:time]).to eq("#{date} #{hour}:00")
+        expect(weather_data[:forecast][:forecastday][0][:hour][0]).to have_key :temp_f
+        expect(weather_data[:forecast][:forecastday][0][:hour][0][:temp_f]).to be_a(Float)
+        expect(weather_data[:forecast][:forecastday][0][:hour][0]).to have_key :condition
+        expect(weather_data[:forecast][:forecastday][0][:hour][0][:condition]).to be_a(Hash)
+        expect(weather_data[:forecast][:forecastday][0][:hour][0][:condition]).to have_key :text
+        expect(weather_data[:forecast][:forecastday][0][:hour][0][:condition][:text]).to be_a(String)
+      end
+    end
   end
 end
