@@ -1,6 +1,4 @@
 class Api::V0::UsersController < ApplicationController
-  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
-
   def create
     return render_unprocessable_content_response unless params[:password] == params[:password_confirmation]
 
@@ -12,10 +10,6 @@ class Api::V0::UsersController < ApplicationController
 
   def user_params
     params.permit(:email, :password)
-  end
-
-  def render_unprocessable_entity_response(exception)
-    render json: { error: exception.message }, status: 422
   end
 
   def render_unprocessable_content_response
