@@ -36,11 +36,11 @@ RSpec.describe MapService, :vcr do
       end
     end
 
-    describe '#get_travel_time' do
-      it 'returns travel time for a given start city and end city' do
+    describe '#get_travel_data' do
+      it 'returns travel data for a given start city and end city' do
         start_city = 'Cincinatti,OH'
         end_city = 'Chicago,IL'
-        data = @service.get_travel_time(start_city, end_city)
+        data = @service.get_travel_data(start_city, end_city)
 
         expect(data).to be_a(Hash)
         expect(data).to have_key :route

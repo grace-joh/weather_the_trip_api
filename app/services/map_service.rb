@@ -3,7 +3,7 @@ class MapService
     get_url("/geocoding/v1/address?location=#{location}")
   end
 
-  def get_travel_time(start_city, end_city)
+  def get_travel_data(start_city, end_city)
     get_url("/directions/v2/route?from=#{start_city}&to=#{end_city}")
   end
 
