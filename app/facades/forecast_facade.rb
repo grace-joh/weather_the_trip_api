@@ -37,10 +37,10 @@ class ForecastFacade
   end
 
   def coordinates
-    @_coordinates ||= geocode_facade.get_coordinates(@location)
+    @_coordinates ||= map_facade.get_coordinates(@location)
   end
 
-  def geocode_facade
-    @_geocode_facade ||= GeocodeFacade.new
+  def map_facade
+    @_map_facade ||= MapFacade.new
   end
 end

@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe GeocodeService, :vcr do
+RSpec.describe MapService, :vcr do
   describe 'instance methods' do
     before :each do
-      @service = GeocodeService.new
+      @service = MapService.new
     end
 
     it 'returns lat and long for a given city' do

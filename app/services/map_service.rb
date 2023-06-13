@@ -1,4 +1,4 @@
-class GeocodeService
+class MapService
   def get_coordinates(location)
     get_url("/geocoding/v1/address?location=#{location}")
   end

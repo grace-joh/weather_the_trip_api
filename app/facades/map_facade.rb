@@ -1,4 +1,4 @@
-class GeocodeFacade
+class MapFacade
   def get_coordinates(location)
     format_data(coordinates(location))
   end
@@ -15,6 +15,6 @@ class GeocodeFacade
   end
 
   def service
-    @_service ||= GeocodeService.new
+    @_service ||= MapService.new
   end
 end
