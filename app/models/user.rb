@@ -1,8 +1,5 @@
 class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   has_secure_password
-
-  before_create do
-    self.api_key = SecureRandom.hex(16)
-  end
+  has_secure_token :api_key, length: 32
 end
