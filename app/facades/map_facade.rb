@@ -1,6 +1,13 @@
-class GeocodeFacade
+class MapFacade
   def get_coordinates(location)
     format_data(coordinates(location))
+  end
+
+  def get_travel_time(start_city, end_city)
+    travel_time = service.get_travel_data(start_city, end_city)[:route]
+    return 'impossible route' if travel_time.key?(:routeError)
+
+    travel_time[:formattedTime]
   end
 
   private
@@ -15,6 +22,6 @@ class GeocodeFacade
   end
 
   def service
-    @_service ||= GeocodeService.new
+    @_service ||= MapService.new
   end
 end

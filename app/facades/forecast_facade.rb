@@ -7,7 +7,18 @@ class ForecastFacade
     Forecast.new(current_weather, five_day_weather, hourly_weather)
   end
 
+  def get_destination_weather(date, hour)
+    datetime = "#{date} #{hour}:00"
+    temperature = destination_weather(date, hour)[:temp_f]
+    condition = destination_weather(date, hour)[:condition][:text]
+    DestinationWeather.new(datetime, temperature, condition)
+  end
+
   private
+
+  def destination_weather(date, hour)
+    @_destination_weather ||= weather_service.get_destination_weather(coordinates, date, hour)[:current]
+  end
 
   def current_weather
     current_weather_data = forecast_data[:current]
@@ -37,10 +48,10 @@ class ForecastFacade
   end
 
   def coordinates
-    @_coordinates ||= geocode_facade.get_coordinates(@location)
+    @_coordinates ||= map_facade.get_coordinates(@location)
   end
 
-  def geocode_facade
-    @_geocode_facade ||= GeocodeFacade.new
+  def map_facade
+    @_map_facade ||= MapFacade.new
   end
 end

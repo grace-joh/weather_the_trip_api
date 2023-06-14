@@ -36,6 +36,9 @@ gem "bootsnap", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
 
+# Timezone
+gem "timezone", "~> 1.0"
+
 # Figaro and Faraday are used for the API
 gem "figaro"
 gem "faraday"
