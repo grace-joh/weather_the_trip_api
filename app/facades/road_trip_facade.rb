@@ -30,7 +30,16 @@ class RoadTripFacade
 
   def arrival_datetime
     time = travel_time.split(':').map(&:to_i)
-    DateTime.now + time[0].hours + time[1].minutes
+    # add the travel time to the current time at the destination
+    (current_destination_time + time[0].hours + time[1].minutes).localtime
+  end
+
+  def current_destination_time
+    end_coord = map_facade.get_coordinates(@end_city)
+    # find the timezone of the destination
+    destination_timezone = Timezone.lookup(end_coord[0], end_coord[1]).name
+    # find the current time in the destination
+    Time.now.utc.in_time_zone(destination_timezone)
   end
 
   def travel_time
