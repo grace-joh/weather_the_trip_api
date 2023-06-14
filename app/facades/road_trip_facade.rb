@@ -5,6 +5,8 @@ class RoadTripFacade
   end
 
   def get_road_trip
+    return RoadTrip.new(@start_city, @end_city, 'impossible route', {}) if travel_time == 'impossible route'
+
     RoadTrip.new(@start_city, @end_city, travel_time, weather_at_eta)
   end
 
