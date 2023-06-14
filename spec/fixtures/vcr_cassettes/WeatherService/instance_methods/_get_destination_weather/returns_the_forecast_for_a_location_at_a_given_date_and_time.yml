@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.weatherapi.com/v1/forecast.json?dt=2023-06-13&hour=15&key=WEATHER_API_KEY&q=41.88425,-87.63245
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 13 Jun 2023 20:00:39 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Server:
+      - BunnyCDN-IL1-718
+      Cdn-Pullzone:
+      - '93447'
+      Cdn-Uid:
+      - 8fa3a04a-75d9-4707-8056-b7b33c8ac7fe
+      Cdn-Requestcountrycode:
+      - US
+      Cache-Control:
+      - public, max-age=180
+      Cdn-Proxyver:
+      - '1.03'
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - 06/13/2023 20:00:39
+      Cdn-Edgestorageid:
+      - '941'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - f1afa8be804a5f2506b7496a4eb89fcf
+      Cdn-Cache:
+      - MISS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"location":{"name":"Chicago","region":"Illinois","country":"United
+        States of America","lat":41.88,"lon":-87.63,"tz_id":"America/Chicago","localtime_epoch":1686686439,"localtime":"2023-06-13
+        15:00"},"current":{"last_updated":"2023-06-13 15:00","temp_f":62.1,"condition":{"text":"Light
+        rain","icon":"//cdn.weatherapi.com/weather/64x64/day/296.png"},"humidity":84,"feelslike_f":62.1,"vis_miles":8.0,"uv":4.0},"forecast":{"forecastday":[{"date":"2023-06-13","day":{"maxtemp_f":63.7,"mintemp_f":55.2,"totalsnow_cm":0.0,"condition":{"text":"Heavy
+        rain","icon":"//cdn.weatherapi.com/weather/64x64/day/308.png"}},"astro":{"sunrise":"05:15
+        AM","sunset":"08:26 PM"},"hour":[{"time":"2023-06-13 15:00","temp_f":59.5,"condition":{"text":"Light
+        rain","icon":"//cdn.weatherapi.com/weather/64x64/day/296.png"}}]}]}}'
+  recorded_at: Tue, 13 Jun 2023 20:00:39 GMT
+recorded_with: VCR 6.1.0

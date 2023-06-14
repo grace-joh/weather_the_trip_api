@@ -1,0 +1,118 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.mapquestapi.com/geocoding/v1/address?key=MAPQUEST_API_KEY&location=denver,co
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 13 Jun 2023 21:21:39 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '797'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit-2628000:
+      - '15000'
+      X-Ratelimit-Remaining-2628000:
+      - '14875'
+      Ratelimit-Limit:
+      - '15000'
+      Ratelimit-Remaining:
+      - '14875'
+      Ratelimit-Reset:
+      - '484701'
+      X-Powered-By:
+      - MapQuest
+      X-Request-Id:
+      - 4937b680-0a30-11ee-9f0f-ff768a60440f
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Transaction-Count:
+      - all=1,geocoding=1
+      Etag:
+      - W/"31d-zftSuFzJHtZuo9xZ/Qg7M7lyAF4"
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpbmZvIjp7InN0YXR1c2NvZGUiOjAsImNvcHlyaWdodCI6eyJ0ZXh0IjoiwqkgMjAyMiBNYXBRdWVzdCwgSW5jLiIsImltYWdlVXJsIjoiaHR0cDovL2FwaS5tcWNkbi5jb20vcmVzL21xbG9nby5naWYiLCJpbWFnZUFsdFRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbXX0sIm9wdGlvbnMiOnsibWF4UmVzdWx0cyI6LTEsImlnbm9yZUxhdExuZ0lucHV0IjpmYWxzZX0sInJlc3VsdHMiOlt7InByb3ZpZGVkTG9jYXRpb24iOnsibG9jYXRpb24iOiJkZW52ZXIsY28ifSwibG9jYXRpb25zIjpbeyJzdHJlZXQiOiIiLCJhZG1pbkFyZWE2IjoiIiwiYWRtaW5BcmVhNlR5cGUiOiJOZWlnaGJvcmhvb2QiLCJhZG1pbkFyZWE1IjoiRGVudmVyIiwiYWRtaW5BcmVhNVR5cGUiOiJDaXR5IiwiYWRtaW5BcmVhNCI6IkRlbnZlciIsImFkbWluQXJlYTRUeXBlIjoiQ291bnR5IiwiYWRtaW5BcmVhMyI6IkNPIiwiYWRtaW5BcmVhM1R5cGUiOiJTdGF0ZSIsImFkbWluQXJlYTEiOiJVUyIsImFkbWluQXJlYTFUeXBlIjoiQ291bnRyeSIsInBvc3RhbENvZGUiOiIiLCJnZW9jb2RlUXVhbGl0eUNvZGUiOiJBNVhBWCIsImdlb2NvZGVRdWFsaXR5IjoiQ0lUWSIsImRyYWdQb2ludCI6ZmFsc2UsInNpZGVPZlN0cmVldCI6Ik4iLCJsaW5rSWQiOiIwIiwidW5rbm93bklucHV0IjoiIiwidHlwZSI6InMiLCJsYXRMbmciOnsibGF0IjozOS43NDAwMSwibG5nIjotMTA0Ljk5MjAyfSwiZGlzcGxheUxhdExuZyI6eyJsYXQiOjM5Ljc0MDAxLCJsbmciOi0xMDQuOTkyMDJ9LCJtYXBVcmwiOiIifV19XX0=
+  recorded_at: Tue, 13 Jun 2023 21:21:39 GMT
+- request:
+    method: get
+    uri: http://api.weatherapi.com/v1/forecast.json?dt=2023-06-13&hour=16&key=WEATHER_API_KEY&q=39.74001,-104.99202
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 13 Jun 2023 21:21:40 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Server:
+      - BunnyCDN-IL1-1029
+      Cdn-Pullzone:
+      - '93447'
+      Cdn-Uid:
+      - 8fa3a04a-75d9-4707-8056-b7b33c8ac7fe
+      Cdn-Requestcountrycode:
+      - US
+      Cache-Control:
+      - public, max-age=180
+      Cdn-Proxyver:
+      - '1.03'
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - 06/13/2023 21:21:40
+      Cdn-Edgestorageid:
+      - '1068'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - e21fb3f2a63684f8d60ac43e799eb5a0
+      Cdn-Cache:
+      - MISS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"location":{"name":"Denver","region":"Colorado","country":"United
+        States of America","lat":39.74,"lon":-104.99,"tz_id":"America/Denver","localtime_epoch":1686691300,"localtime":"2023-06-13
+        15:21"},"current":{"last_updated":"2023-06-13 15:15","temp_f":52.3,"condition":{"text":"Light
+        rain","icon":"//cdn.weatherapi.com/weather/64x64/day/296.png"},"humidity":90,"feelslike_f":50.0,"vis_miles":6.0,"uv":4.0},"forecast":{"forecastday":[{"date":"2023-06-13","day":{"maxtemp_f":63.9,"mintemp_f":51.6,"totalsnow_cm":0.0,"condition":{"text":"Patchy
+        rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png"}},"astro":{"sunrise":"05:32
+        AM","sunset":"08:29 PM"},"hour":[{"time":"2023-06-13 16:00","temp_f":62.4,"condition":{"text":"Partly
+        cloudy","icon":"//cdn.weatherapi.com/weather/64x64/day/116.png"}}]}]}}'
+  recorded_at: Tue, 13 Jun 2023 21:21:40 GMT
+recorded_with: VCR 6.1.0
