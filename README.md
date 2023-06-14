@@ -262,10 +262,11 @@ To test the endpoints:
 </details>
 
 ## Database Schema
+![Screenshot 2023-06-14 at 11 16 19 AM](https://user-images.githubusercontent.com/105441393/245866617-0abb9cd5-436d-4c62-86ee-41370fc2912b.png)
 
 
 ## Looking Forward
-Currently, Weather the Trip completes the requirements for the project as described here. My next steps for this project includes:
+Currently, Weather the Trip completes the requirements for the project as described [here](https://backend.turing.edu/module3/projects/sweater_weather/requirements). My next steps for this project includes:
 * Weather Features
   * Exposing an endpoint that allows users to see the forecasted weather at multiple stops throughout their trip.
   * Allowing users to choose the units of measurement for the weather.
