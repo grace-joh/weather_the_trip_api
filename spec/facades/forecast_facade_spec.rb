@@ -6,6 +6,7 @@ RSpec.describe ForecastFacade do
       location = 'denver,co'
       @facade = ForecastFacade.new(location)
     end
+
     describe '#initialize' do
       it 'exists' do
         expect(@facade).to be_a(ForecastFacade)
@@ -24,6 +25,20 @@ RSpec.describe ForecastFacade do
         expect(denver_forecast.hourly_weather).to be_an(Array)
         expect(denver_forecast.hourly_weather.count).to eq(24)
         expect(denver_forecast.hourly_weather).to all(be_an(HourlyWeather))
+      end
+    end
+
+    describe '#get_destination_weather', :vcr do
+      it 'returns a destination weather object' do
+        date = DateTime.now.strftime('%Y-%m-%d')
+        hour = DateTime.now.strftime('%H')
+        destination_weather = @facade.get_destination_weather(date, hour)
+
+        expect(destination_weather).to be_a(DestinationWeather)
+        expect(destination_weather.datetime).to be_a(String)
+        expect(destination_weather.datetime).to eq("#{date} #{hour}:00")
+        expect(destination_weather.temperature).to be_a(Float)
+        expect(destination_weather.conditions).to be_a(String)
       end
     end
   end
