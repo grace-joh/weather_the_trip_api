@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 14 Jun 2023 04:46:38 GMT
+      - Wed, 14 Jun 2023 04:46:28 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -29,17 +29,17 @@ http_interactions:
       X-Ratelimit-Limit-2628000:
       - '15000'
       X-Ratelimit-Remaining-2628000:
-      - '14562'
+      - '14581'
       Ratelimit-Limit:
       - '15000'
       Ratelimit-Remaining:
-      - '14562'
+      - '14581'
       Ratelimit-Reset:
-      - '458002'
+      - '458012'
       X-Powered-By:
       - MapQuest
       X-Request-Id:
-      - 72934b00-0a6e-11ee-9b6e-d5a2bf3ba13e
+      - 6cc98310-0a6e-11ee-81d3-110befbdfc49
       Access-Control-Allow-Origin:
       - "*"
       X-Transaction-Count:
@@ -50,5 +50,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJyb3V0ZSI6eyJyb3V0ZUVycm9yIjp7ImVycm9yQ29kZSI6MiwibWVzc2FnZSI6IiJ9fSwiaW5mbyI6eyJzdGF0dXNjb2RlIjo0MDIsImNvcHlyaWdodCI6eyJ0ZXh0IjoiwqkgMjAyMiBNYXBRdWVzdCwgSW5jLiIsImltYWdlVXJsIjoiaHR0cDovL2FwaS5tcWNkbi5jb20vcmVzL21xbG9nby5naWYiLCJpbWFnZUFsdFRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbIldlIGFyZSB1bmFibGUgdG8gcm91dGUgd2l0aCB0aGUgZ2l2ZW4gbG9jYXRpb25zLiJdfX0=
-  recorded_at: Wed, 14 Jun 2023 04:46:38 GMT
+  recorded_at: Wed, 14 Jun 2023 04:46:28 GMT
 recorded_with: VCR 6.1.0

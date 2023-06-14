@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.weatherapi.com/v1/forecast.json?dt=2023-06-13&hour=15&key=WEATHER_API_KEY&q=41.88425,-87.63245
+    uri: http://api.weatherapi.com/v1/forecast.json?dt=2023-06-13&hour=23&key=WEATHER_API_KEY&q=41.88425,-87.63245
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 13 Jun 2023 20:00:39 GMT
+      - Wed, 14 Jun 2023 04:46:53 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -29,7 +29,7 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Server:
-      - BunnyCDN-IL1-718
+      - BunnyCDN-IL1-1070
       Cdn-Pullzone:
       - '93447'
       Cdn-Uid:
@@ -45,23 +45,22 @@ http_interactions:
       Cdn-Requestpullcode:
       - '200'
       Cdn-Cachedat:
-      - 06/13/2023 20:00:39
+      - 06/14/2023 04:46:53
       Cdn-Edgestorageid:
       - '941'
       Cdn-Status:
       - '200'
       Cdn-Requestid:
-      - f1afa8be804a5f2506b7496a4eb89fcf
+      - cbbfe77ce694435b93e617a48bfc0b70
       Cdn-Cache:
       - MISS
     body:
       encoding: ASCII-8BIT
       string: '{"location":{"name":"Chicago","region":"Illinois","country":"United
-        States of America","lat":41.88,"lon":-87.63,"tz_id":"America/Chicago","localtime_epoch":1686686439,"localtime":"2023-06-13
-        15:00"},"current":{"last_updated":"2023-06-13 15:00","temp_f":62.1,"condition":{"text":"Light
-        rain","icon":"//cdn.weatherapi.com/weather/64x64/day/296.png"},"humidity":84,"feelslike_f":62.1,"vis_miles":8.0,"uv":4.0},"forecast":{"forecastday":[{"date":"2023-06-13","day":{"maxtemp_f":63.7,"mintemp_f":55.2,"totalsnow_cm":0.0,"condition":{"text":"Heavy
+        States of America","lat":41.88,"lon":-87.63,"tz_id":"America/Chicago","localtime_epoch":1686718013,"localtime":"2023-06-13
+        23:46"},"current":{"last_updated":"2023-06-13 23:45","temp_f":62.1,"condition":{"text":"Overcast","icon":"//cdn.weatherapi.com/weather/64x64/night/122.png"},"humidity":84,"feelslike_f":62.1,"vis_miles":9.0,"uv":1.0},"forecast":{"forecastday":[{"date":"2023-06-13","day":{"maxtemp_f":62.1,"mintemp_f":55.2,"totalsnow_cm":0.0,"condition":{"text":"Heavy
         rain","icon":"//cdn.weatherapi.com/weather/64x64/day/308.png"}},"astro":{"sunrise":"05:15
-        AM","sunset":"08:26 PM"},"hour":[{"time":"2023-06-13 15:00","temp_f":59.5,"condition":{"text":"Light
-        rain","icon":"//cdn.weatherapi.com/weather/64x64/day/296.png"}}]}]}}'
-  recorded_at: Tue, 13 Jun 2023 20:00:39 GMT
+        AM","sunset":"08:26 PM"},"hour":[{"time":"2023-06-13 23:00","temp_f":58.5,"condition":{"text":"Light
+        rain shower","icon":"//cdn.weatherapi.com/weather/64x64/night/353.png"}}]}]}}'
+  recorded_at: Wed, 14 Jun 2023 04:46:53 GMT
 recorded_with: VCR 6.1.0
