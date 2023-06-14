@@ -4,7 +4,10 @@ class MapFacade
   end
 
   def get_travel_time(start_city, end_city)
-    service.get_travel_data(start_city, end_city)[:route][:formattedTime]
+    travel_time = service.get_travel_data(start_city, end_city)[:route]
+    return 'impossible route' if travel_time.key?(:routeError)
+
+    travel_time[:formattedTime]
   end
 
   private

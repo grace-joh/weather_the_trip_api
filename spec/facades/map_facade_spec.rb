@@ -21,6 +21,14 @@ RSpec.describe MapFacade, :vcr do
         expect(travel_time).to be_a(String)
         expect(travel_time).to eq('04:20:37')
       end
+
+      it 'returns impossible route if no route exists' do
+        start_city = 'Cincinatti,OH'
+        end_city = 'South Korea'
+        travel_time = MapFacade.new.get_travel_time(start_city, end_city)
+
+        expect(travel_time).to eq('impossible route')
+      end
     end
   end
 end
